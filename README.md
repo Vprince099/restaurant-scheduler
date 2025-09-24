@@ -4,6 +4,10 @@ A lightweight web app to plan and manage restaurant staff shifts. Designed for f
 
 > **Status:** Actively developed. Contributions and feedback welcome!
 
+[![Deploy to Pages](https://github.com/Vprince099/restaurant-scheduler/actions/workflows/deploy.yml/badge.svg)](https://github.com/Vprince099/restaurant-scheduler/actions/workflows/deploy.yml)
+
+**Live site:** https://vprince099.github.io/restaurant-scheduler/
+
 ---
 
 ## Table of Contents
