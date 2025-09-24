@@ -1,11 +1,10 @@
-// existing React/Vite bootstrapping...
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
 
-// PWA registration (vite-plugin-pwa injects the file at build time)
-if ('serviceWorker' in navigator) {
-  // optional: listens for updates and reloads automatically
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.ready.then(reg => {
-      // You can handle update prompts here if you want
-    })
-  })
+const el = document.getElementById("root");
+if (!el) {
+  document.body.innerHTML = "<pre>Mount point #root was not found.</pre>";
+} else {
+  createRoot(el).render(<App />);
 }
