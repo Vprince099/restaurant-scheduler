@@ -182,4 +182,8 @@ export default function SettingsPanel() {
           />
           &nbsp;Warn on overtime
         </label>
-      </sect
+      </section>
+    </div>
+  );
+}
+
