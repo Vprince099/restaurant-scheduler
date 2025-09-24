@@ -1111,15 +1111,15 @@ function App() {
       <GlobalStyles />
       <header className="header"><h1 className="headline">Restaurant Scheduler</h1><p className="muted">Plan weekly shifts, auto-assign, export/share/print. <span className="small">(Auto-saves locally)</span></p></header>
 		
-		/*Setings Panel render
-		//<div style={{ padding: 16 }}> 
-		  //<ImportExportButtons />
-		  //<SettingsPanel />
-		//</div>
-*/
-      /*Not used for now
-	  <CloudSyncSection weekStart={weekStart} roles={roles} employees={employees} templates={templates} demand={demand} demandDaily={demandDaily} useDailyDemand={useDailyDemand} shifts={shifts} notes={notes} closedDays={closedDays} setWeekStart={setWeekStart} setRoles={setRoles} setEmployees={setEmployees} setTemplates={setTemplates} setDemand={setDemand} setDemandDaily={setDemandDaily} setUseDailyDemand={setUseDailyDemand} setShifts={setShifts} setNotes={setNotes} setClosedDays={setClosedDays} />
-*/
+		{/* --- Settings menu OFF --- */}
+		{/*<div style={{ padding: 16 }}> 
+		  <ImportExportButtons />
+		  <SettingsPanel />
+		</div>*/}
+		
+      {/* --- Cloud section OFF --- */}
+	  {/*<CloudSyncSection weekStart={weekStart} roles={roles} employees={employees} templates={templates} demand={demand} demandDaily={demandDaily} useDailyDemand={useDailyDemand} shifts={shifts} notes={notes} closedDays={closedDays} setWeekStart={setWeekStart} setRoles={setRoles} setEmployees={setEmployees} setTemplates={setTemplates} setDemand={setDemand} setDemandDaily={setDemandDaily} setUseDailyDemand={setUseDailyDemand} setShifts={setShifts} setNotes={setNotes} setClosedDays={setClosedDays} />
+		*/}
       <Section title="Week" actions={
         <div style={{ display: "flex", gap: 8, flexWrap:'wrap' }}>
           <Button onClick={() => setWeekStart(addDays(weekStart, -7))}>Prev week</Button>
