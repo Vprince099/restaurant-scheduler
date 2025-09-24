@@ -4,18 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import ImportExportButtons from "./components/ImportExportButtons.jsx";
 import SettingsPanel from "./components/SettingsPanel.jsx";
 
-export default function App() {
-  return (
-    <div style={{ padding: 16 }}>
-      <h1>Restaurant Scheduler</h1>
-      <ImportExportButtons />
-      <SettingsPanel />
-      {/* ...rest of your UI */}
-    </div>
-  );
-}
-
-
 // ---------------------- Global Styles ----------------------
 function GlobalStyles() {
   return (
@@ -1122,6 +1110,10 @@ function App() {
     <div className="container">
       <GlobalStyles />
       <header className="header"><h1 className="headline">Restaurant Scheduler</h1><p className="muted">Plan weekly shifts, auto-assign, export/share/print. <span className="small">(Auto-saves locally)</span></p></header>
+		<div style={{ padding: 16 }}>
+		  <ImportExportButtons />
+		  <SettingsPanel />
+		</div>
 
       <CloudSyncSection weekStart={weekStart} roles={roles} employees={employees} templates={templates} demand={demand} demandDaily={demandDaily} useDailyDemand={useDailyDemand} shifts={shifts} notes={notes} closedDays={closedDays} setWeekStart={setWeekStart} setRoles={setRoles} setEmployees={setEmployees} setTemplates={setTemplates} setDemand={setDemand} setDemandDaily={setDemandDaily} setUseDailyDemand={setUseDailyDemand} setShifts={setShifts} setNotes={setNotes} setClosedDays={setClosedDays} />
 
