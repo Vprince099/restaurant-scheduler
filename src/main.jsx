@@ -1,10 +1,11 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+// existing React/Vite bootstrapping...
 
-createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+// PWA registration (vite-plugin-pwa injects the file at build time)
+if ('serviceWorker' in navigator) {
+  // optional: listens for updates and reloads automatically
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.ready.then(reg => {
+      // You can handle update prompts here if you want
+    })
+  })
+}
