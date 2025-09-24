@@ -1,5 +1,6 @@
 import React from "react";
 import { useSettings } from "../hooks/useSettings";
+import ImportExportButtons from "./ImportExportButtons.jsx";
 
 export default function SettingsPanel() {
   const { settings, update, resetSettings } = useSettings();
@@ -9,6 +10,9 @@ export default function SettingsPanel() {
   return (
     <div style={{ display: "grid", gap: 16, maxWidth: 720 }}>
       <h2>Settings</h2>
+
+      {/* Import / Export buttons */}
+      <ImportExportButtons />
 
       <section>
         <h3>App</h3>
@@ -50,7 +54,12 @@ export default function SettingsPanel() {
           <input
             type="text"
             value={rolesStr}
-            onChange={(e) => update("business.roles", e.target.value.split(",").map(s => s.trim()).filter(Boolean))}
+            onChange={(e) =>
+              update(
+                "business.roles",
+                e.target.value.split(",").map(s => s.trim()).filter(Boolean)
+              )
+            }
           />
         </label>
       </section>
@@ -91,7 +100,9 @@ export default function SettingsPanel() {
               min={1}
               max={16}
               value={settings.scheduling.defaultShiftLengthHours}
-              onChange={(e) => update("scheduling.defaultShiftLengthHours", Number(e.target.value))}
+              onChange={(e) =>
+                update("scheduling.defaultShiftLengthHours", Number(e.target.value))
+              }
             />
           </label>
         </div>
@@ -109,7 +120,15 @@ export default function SettingsPanel() {
         <h3>Labor</h3>
         <div style={{ display: "grid", gap: 8 }}>
           {Object.entries(settings.labor.wageByRole).map(([role, wage]) => (
-            <label key={role} style={{ display: "grid", gridTemplateColumns: "1fr 120px", gap: 8, alignItems: "center" }}>
+            <label
+              key={role}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 120px",
+                gap: 8,
+                alignItems: "center"
+              }}
+            >
               <span>{role}</span>
               <input
                 type="number"
@@ -126,7 +145,9 @@ export default function SettingsPanel() {
             <input
               type="number"
               value={settings.labor.overtimeRule.thresholdHours}
-              onChange={(e) => update("labor.overtimeRule.thresholdHours", Number(e.target.value))}
+              onChange={(e) =>
+                update("labor.overtimeRule.thresholdHours", Number(e.target.value))
+              }
             />
           </label>
           <label>
@@ -135,7 +156,9 @@ export default function SettingsPanel() {
               type="number"
               step="0.1"
               value={settings.labor.overtimeRule.multiplier}
-              onChange={(e) => update("labor.overtimeRule.multiplier", Number(e.target.value))}
+              onChange={(e) =>
+                update("labor.overtimeRule.multiplier", Number(e.target.value))
+              }
             />
           </label>
         </div>
@@ -159,11 +182,4 @@ export default function SettingsPanel() {
           />
           &nbsp;Warn on overtime
         </label>
-      </section>
-
-      <div style={{ display: "flex", gap: 8 }}>
-        <button type="button" onClick={resetSettings}>Reset to defaults</button>
-      </div>
-    </div>
-  );
-}
+      </sect
