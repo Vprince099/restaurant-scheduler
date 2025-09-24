@@ -20,6 +20,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+      - run: ls -lah dist && ls -lah dist/assets || true   # debug: confirm build output
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
