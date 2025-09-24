@@ -1,6 +1,20 @@
 import React, { useMemo, useState, useEffect, useRef } from "react";
 import { format, addDays, startOfWeek } from "date-fns";
 import { v4 as uuidv4 } from "uuid";
+import ImportExportButtons from "./components/ImportExportButtons.jsx";
+import SettingsPanel from "./components/SettingsPanel.jsx";
+
+export default function App() {
+  return (
+    <div style={{ padding: 16 }}>
+      <h1>Restaurant Scheduler</h1>
+      <ImportExportButtons />
+      <SettingsPanel />
+      {/* ...rest of your UI */}
+    </div>
+  );
+}
+
 
 // ---------------------- Global Styles ----------------------
 function GlobalStyles() {
